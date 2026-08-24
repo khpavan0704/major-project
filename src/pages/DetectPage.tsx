@@ -11,6 +11,42 @@ import {
 
 type Phase = 'idle' | 'preview' | 'quality-check' | 'analyzing' | 'error';
 
+function checkLeafImage(dataUrl: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.onload = () => {
+      const canvas = document.createElement('canvas');
+      const size = 96;
+      canvas.width = size;
+      canvas.height = size;
+      const context = canvas.getContext('2d');
+
+      if (!context) {
+        resolve(true);
+        return;
+      }
+
+      context.drawImage(image, 0, 0, size, size);
+      const pixels = context.getImageData(0, 0, size, size).data;
+      let leafLikePixels = 0;
+
+      for (let index = 0; index < pixels.length; index += 4) {
+        const red = pixels[index];
+        const green = pixels[index + 1];
+        const blue = pixels[index + 2];
+        const isGreenLeaf = green > red * 1.05 && green > blue * 1.08 && green > 45;
+        const isYellowLeaf = red > blue * 1.35 && green > blue * 1.2 && red > 55 && green > 45;
+
+        if (isGreenLeaf || isYellowLeaf) leafLikePixels += 1;
+      }
+
+      resolve(leafLikePixels / (size * size) >= 0.12);
+    };
+    image.onerror = () => resolve(false);
+    image.src = dataUrl;
+  });
+}
+
 export function DetectPage() {
   const { t } = useI18n();
   const { navigate } = useRouter();
@@ -24,7 +60,7 @@ export function DetectPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFile = useCallback((file: File) => {
+  const handleFile = useCallback(async (file: File) => {
     if (!file.type.startsWith('image/')) {
       setError('Please select an image file.');
       setPhase('error');
@@ -36,10 +72,28 @@ export function DetectPage() {
       return;
     }
     const reader = new FileReader();
-    reader.onload = (e) => {
-      setImageData(e.target?.result as string);
+    reader.onload = async (e) => {
+      const dataUrl = e.target?.result;
+      if (typeof dataUrl !== 'string') {
+        setError('We could not read that image. Please try another photo.');
+        setPhase('error');
+        return;
+      }
+
+      const looksLikeLeaf = await checkLeafImage(dataUrl);
+      if (!looksLikeLeaf) {
+        setError('This does not look like an arecanut leaf photo. Please upload a clear photo of one leaf.');
+        setPhase('error');
+        return;
+      }
+
+      setImageData(dataUrl);
       setPhase('preview');
       setError('');
+    };
+    reader.onerror = () => {
+      setError('We could not read that image. Please try another photo.');
+      setPhase('error');
     };
     reader.readAsDataURL(file);
   }, []);
@@ -183,7 +237,7 @@ export function DetectPage() {
               </div>
               <div className="mt-4 flex items-center gap-2 text-sm text-areca-600">
                 <ImageIcon className="h-4 w-4" />
-                <span>Image ready for analysis</span>
+                <span>Leaf image ready for analysis</span>
               </div>
             </div>
 
@@ -289,6 +343,7 @@ export function DetectPage() {
             </div>
             <h3 className="font-semibold text-areca-900 text-lg mb-2">Unable to analyze</h3>
             <p className="text-areca-600 text-sm mb-6">{error || t('detect.qualityFail')}</p>
+            <p className="text-xs text-areca-500 mb-6">Use a clear, well-lit photo with the leaf filling most of the frame.</p>
             <button onClick={reset} className="btn-primary">
               {t('common.retry')}
             </button>
