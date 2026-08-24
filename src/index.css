@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-areca-50 text-areca-950 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-areca-200 text-areca-950;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border border-areca-100 shadow-sm;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-areca-200;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-areca-600 text-white px-5 py-3 hover:bg-areca-700 active:scale-[0.98] shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-areca-700 border border-areca-200 px-5 py-3 hover:bg-areca-50 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-areca-700 px-4 py-2 hover:bg-areca-50;
+  }
+  .input {
+    @apply w-full rounded-xl border border-areca-200 bg-white px-4 py-3 text-areca-950 placeholder-areca-400 focus:border-areca-500 focus:ring-2 focus:ring-areca-200 focus:outline-none transition-all;
+  }
+  .label {
+    @apply block text-sm font-semibold text-areca-800 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  .container-app {
+    @apply max-w-7xl mx-auto w-full;
+  }
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/60;
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, #e3f5e4 0%, #f3faf3 50%, #e3f5e4 100%);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f3faf3;
+}
+::-webkit-scrollbar-thumb {
+  background: #9fd6a3;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6fbd78;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styles for PDF report */
+@media print {
+  header, footer, .btn, .btn-primary, .btn-secondary, .btn-ghost {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #e3f5e4 !important;
+    break-inside: avoid;
+  }
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-scale-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

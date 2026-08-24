@@ -1,0 +1,356 @@
+export type Language = 'en' | 'kn';
+
+export type TranslationKey =
+  | 'nav.home' | 'nav.detect' | 'nav.dashboard' | 'nav.history' | 'nav.advisory'
+  | 'nav.weather' | 'nav.profile' | 'nav.expert' | 'nav.about' | 'nav.admin' | 'nav.model'
+  | 'nav.login' | 'nav.register' | 'nav.logout'
+  | 'landing.hero.title' | 'landing.hero.subtitle' | 'landing.hero.detect' | 'landing.hero.advisory'
+  | 'landing.how.title' | 'landing.how.step1' | 'landing.how.step2' | 'landing.how.step3' | 'landing.how.step4'
+  | 'landing.why.title'
+  | 'common.detect' | 'common.upload' | 'common.healthy' | 'common.yellowLeaf' | 'common.confidence'
+  | 'common.advisory' | 'common.symptoms' | 'common.prevention' | 'common.history' | 'common.profile'
+  | 'common.severity' | 'common.model' | 'common.scan' | 'common.back' | 'common.save' | 'common.delete'
+  | 'common.download' | 'common.loading' | 'common.retry' | 'common.close' | 'common.viewDetails'
+  | 'common.generateReport' | 'common.listen' | 'common.demo' | 'common.cancel' | 'common.confirm'
+  | 'detect.title' | 'detect.subtitle' | 'detect.takePhoto' | 'detect.uploadImage' | 'detect.analyze'
+  | 'detect.qualityCheck' | 'detect.qualityFail' | 'detect.analyzing' | 'detect.scanning'
+  | 'result.title' | 'result.prediction' | 'result.severity' | 'result.model' | 'result.healthyProb'
+  | 'result.diseaseProb' | 'result.explanation' | 'result.attention' | 'result.attentionDesc'
+  | 'result.healthyTitle' | 'result.diseaseTitle' | 'result.disclaimer'
+  | 'advisory.title' | 'advisory.meaning' | 'advisory.symptoms' | 'advisory.immediate' | 'advisory.fieldMgmt'
+  | 'advisory.prevention' | 'advisory.monitoring' | 'advisory.expert' | 'advisory.chemical'
+  | 'dashboard.greeting' | 'dashboard.totalScans' | 'dashboard.healthy' | 'dashboard.diseased'
+  | 'dashboard.highRisk' | 'dashboard.trend' | 'dashboard.severityDist' | 'dashboard.recent'
+  | 'weather.title' | 'weather.current' | 'weather.temp' | 'weather.humidity' | 'weather.rain'
+  | 'weather.forecast' | 'weather.tips'
+  | 'profile.title' | 'profile.name' | 'profile.mobile' | 'profile.village' | 'profile.taluk'
+  | 'profile.district' | 'profile.farmSize' | 'profile.palms' | 'profile.language'
+  | 'expert.title' | 'expert.subtitle' | 'expert.officer' | 'expert.pathologist' | 'expert.research'
+  | 'about.title'
+  | 'admin.title' | 'admin.farmers' | 'admin.predictions' | 'admin.healthy' | 'admin.disease'
+  | 'admin.diseaseDist' | 'admin.severityDist' | 'admin.accuracy' | 'admin.precision' | 'admin.recall'
+  | 'admin.f1' | 'admin.trend'
+  | 'model.title' | 'model.name' | 'model.version' | 'model.trainingDate' | 'model.dataset'
+  | 'model.status' | 'model.metricsUnavailable'
+  | 'auth.login' | 'auth.register' | 'auth.email' | 'auth.password' | 'auth.name' | 'auth.mobile'
+  | 'auth.welcome' | 'auth.createAccount' | 'auth.noAccount' | 'auth.haveAccount'
+  | 'notfound.title' | 'notfound.subtitle' | 'notfound.home';
+
+export const translations: Record<Language, Record<TranslationKey, string>> = {
+  en: {
+    'nav.home': 'Home',
+    'nav.detect': 'Detect Disease',
+    'nav.dashboard': 'Dashboard',
+    'nav.history': 'History',
+    'nav.advisory': 'Advisory',
+    'nav.weather': 'Weather',
+    'nav.profile': 'Profile',
+    'nav.expert': 'Expert Help',
+    'nav.about': 'About',
+    'nav.admin': 'Admin',
+    'nav.model': 'Model',
+    'nav.login': 'Login',
+    'nav.register': 'Register',
+    'nav.logout': 'Logout',
+
+    'landing.hero.title': 'Detect. Understand. Protect.',
+    'landing.hero.subtitle': 'AI-powered Arecanut Yellow Leaf Disease detection and farmer advisory.',
+    'landing.hero.detect': 'Detect Disease',
+    'landing.hero.advisory': 'Explore Advisory',
+    'landing.how.title': 'How It Works',
+    'landing.how.step1': 'Capture Leaf',
+    'landing.how.step2': 'AI Analysis',
+    'landing.how.step3': 'Disease Detection',
+    'landing.how.step4': 'Farmer Advisory',
+    'landing.why.title': 'Why ArecaCare AI?',
+
+    'common.detect': 'Disease Detection',
+    'common.upload': 'Upload Image',
+    'common.healthy': 'Healthy',
+    'common.yellowLeaf': 'Yellow Leaf Disease',
+    'common.confidence': 'Confidence',
+    'common.advisory': 'Farmer Advisory',
+    'common.symptoms': 'Symptoms',
+    'common.prevention': 'Prevention',
+    'common.history': 'History',
+    'common.profile': 'Profile',
+    'common.severity': 'Severity',
+    'common.model': 'Model',
+    'common.scan': 'Scan',
+    'common.back': 'Back',
+    'common.save': 'Save',
+    'common.delete': 'Delete',
+    'common.download': 'Download Report',
+    'common.loading': 'Loading...',
+    'common.retry': 'Retry',
+    'common.close': 'Close',
+    'common.viewDetails': 'View Details',
+    'common.generateReport': 'Generate Report',
+    'common.listen': 'Listen to Advisory',
+    'common.demo': 'DEMO',
+    'common.cancel': 'Cancel',
+    'common.confirm': 'Confirm',
+
+    'detect.title': 'AI Disease Detection',
+    'detect.subtitle': 'Capture or upload an arecanut leaf image for instant AI analysis',
+    'detect.takePhoto': 'Take Photo',
+    'detect.uploadImage': 'Upload Image',
+    'detect.analyze': 'Analyze Leaf',
+    'detect.qualityCheck': 'Image Quality Check',
+    'detect.qualityFail': 'Image quality is insufficient for reliable analysis. Please capture a clearer image of the leaf in good lighting.',
+    'detect.analyzing': 'Analyzing...',
+    'detect.scanning': 'AI is scanning your leaf...',
+
+    'result.title': 'AI Analysis Complete',
+    'result.prediction': 'Prediction',
+    'result.severity': 'Severity',
+    'result.model': 'Model',
+    'result.healthyProb': 'Healthy Probability',
+    'result.diseaseProb': 'Yellow Leaf Disease Probability',
+    'result.explanation': 'AI Explanation',
+    'result.attention': 'AI Attention Visualization',
+    'result.attentionDesc': 'The highlighted regions represent areas that influenced the model prediction. This visualization is intended to support interpretation and is not a substitute for expert diagnosis.',
+    'result.healthyTitle': 'Healthy Arecanut Leaf',
+    'result.diseaseTitle': 'Yellow Leaf Disease Detected',
+    'result.disclaimer': 'AI predictions are preliminary and may contain errors. Use the result as a decision-support tool and consult a qualified agricultural expert for confirmation and treatment recommendations.',
+
+    'advisory.title': 'Farmer Advisory',
+    'advisory.meaning': 'What the result means',
+    'advisory.symptoms': 'Symptoms to observe',
+    'advisory.immediate': 'Immediate actions',
+    'advisory.fieldMgmt': 'Field-management recommendations',
+    'advisory.prevention': 'Prevention',
+    'advisory.monitoring': 'Monitoring schedule',
+    'advisory.expert': 'When to contact an agricultural expert',
+    'advisory.chemical': 'Follow recommendations from your local agricultural department or plant pathologist before applying pesticides or other treatments.',
+
+    'dashboard.greeting': 'Good Morning, Farmer',
+    'dashboard.totalScans': 'Total Scans',
+    'dashboard.healthy': 'Healthy Leaves',
+    'dashboard.diseased': 'Diseased Leaves',
+    'dashboard.highRisk': 'High-Risk Predictions',
+    'dashboard.trend': 'Disease Detection Trend',
+    'dashboard.severityDist': 'Severity Distribution',
+    'dashboard.recent': 'Recent Predictions',
+
+    'weather.title': 'Weather & Farm Tips',
+    'weather.current': 'Current Weather',
+    'weather.temp': 'Temperature',
+    'weather.humidity': 'Humidity',
+    'weather.rain': 'Rain Probability',
+    'weather.forecast': '7-Day Forecast',
+    'weather.tips': 'Weather-Based Farm Tips',
+
+    'profile.title': 'Farmer Profile',
+    'profile.name': 'Name',
+    'profile.mobile': 'Mobile Number',
+    'profile.village': 'Village',
+    'profile.taluk': 'Taluk',
+    'profile.district': 'District',
+    'profile.farmSize': 'Farm Size (acres)',
+    'profile.palms': 'Number of Arecanut Palms',
+    'profile.language': 'Language Preference',
+
+    'expert.title': 'Need Expert Help?',
+    'expert.subtitle': 'Connect with agricultural specialists for professional guidance',
+    'expert.officer': 'Agricultural Officer',
+    'expert.pathologist': 'Plant Pathologist',
+    'expert.research': 'Agricultural Research Centre',
+
+    'about.title': 'About the Project',
+
+    'admin.title': 'Admin Dashboard',
+    'admin.farmers': 'Total Farmers',
+    'admin.predictions': 'Total Predictions',
+    'admin.healthy': 'Healthy Predictions',
+    'admin.disease': 'Disease Predictions',
+    'admin.diseaseDist': 'Disease Distribution',
+    'admin.severityDist': 'Severity Distribution',
+    'admin.accuracy': 'Model Accuracy',
+    'admin.precision': 'Precision',
+    'admin.recall': 'Recall',
+    'admin.f1': 'F1 Score',
+    'admin.trend': 'Prediction Trend',
+
+    'model.title': 'Model Management',
+    'model.name': 'Model Name',
+    'model.version': 'Version',
+    'model.trainingDate': 'Training Date',
+    'model.dataset': 'Dataset Version',
+    'model.status': 'Status',
+    'model.metricsUnavailable': 'Metrics will be available after the real model is trained and connected.',
+
+    'auth.login': 'Login',
+    'auth.register': 'Register',
+    'auth.email': 'Email',
+    'auth.password': 'Password',
+    'auth.name': 'Full Name',
+    'auth.mobile': 'Mobile Number',
+    'auth.welcome': 'Welcome back',
+    'auth.createAccount': 'Create your account',
+    'auth.noAccount': "Don't have an account?",
+    'auth.haveAccount': 'Already have an account?',
+
+    'notfound.title': 'Page Not Found',
+    'notfound.subtitle': 'The page you are looking for does not exist or has been moved.',
+    'notfound.home': 'Back to Home',
+  },
+  kn: {
+    'nav.home': 'ಮುಖಪುಟ',
+    'nav.detect': 'ರೋಗ ಪತ್ತೆ',
+    'nav.dashboard': 'ಡ್ಯಾಶ್‌ಬೋರ್ಡ್',
+    'nav.history': 'ಇತಿಹಾಸ',
+    'nav.advisory': 'ಸಲಹೆ',
+    'nav.weather': 'ಹವಾಮಾನ',
+    'nav.profile': 'ಪ್ರೊಫೈಲ್',
+    'nav.expert': 'ತಜ್ಞ ಸಹಾಯ',
+    'nav.about': 'ಯೋಜನೆಯ ಬಗ್ಗೆ',
+    'nav.admin': 'ನಿರ್ವಾಹಕ',
+    'nav.model': 'ಮಾದರಿ',
+    'nav.login': 'ಲಾಗಿನ್',
+    'nav.register': 'ನೋಂದಣಿ',
+    'nav.logout': 'ಲಾಗ್‌ಔಟ್',
+
+    'landing.hero.title': 'ಪತ್ತೆ ಮಾಡಿ. ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ. ರಕ್ಷಿಸಿ.',
+    'landing.hero.subtitle': 'ಎಐ ಚಾಲಿತ ಅಡಿಕೆ ಹಳದಿ ಎಲೆ ರೋಗ ಪತ್ತೆ ಮತ್ತು ರೈತ ಸಲಹೆ.',
+    'landing.hero.detect': 'ರೋಗ ಪತ್ತೆ ಮಾಡಿ',
+    'landing.hero.advisory': 'ಸಲಹೆ ನೋಡಿ',
+    'landing.how.title': 'ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ',
+    'landing.how.step1': 'ಎಲೆ ಕ್ಯಾಪ್ಚರ್ ಮಾಡಿ',
+    'landing.how.step2': 'ಎಐ ವಿಶ್ಲೇಷಣೆ',
+    'landing.how.step3': 'ರೋಗ ಪತ್ತೆ',
+    'landing.how.step4': 'ರೈತ ಸಲಹೆ',
+    'landing.why.title': 'ಏಕೆ ArecaCare AI?',
+
+    'common.detect': 'ರೋಗ ಪತ್ತೆ',
+    'common.upload': 'ಚಿತ್ರ ಅಪ್‌ಲೋಡ್',
+    'common.healthy': 'ಆರೋಗ್ಯಕರ',
+    'common.yellowLeaf': 'ಹಳದಿ ಎಲೆ ರೋಗ',
+    'common.confidence': 'ವಿಶ್ವಾಸಾರ್ಹತೆ',
+    'common.advisory': 'ರೈತ ಸಲಹೆ',
+    'common.symptoms': 'ಲಕ್ಷಣಗಳು',
+    'common.prevention': 'ತಡೆಗಟ್ಟುವಿಕೆ',
+    'common.history': 'ಇತಿಹಾಸ',
+    'common.profile': 'ಪ್ರೊಫೈಲ್',
+    'common.severity': 'ತೀವ್ರತೆ',
+    'common.model': 'ಮಾದರಿ',
+    'common.scan': 'ಸ್ಕ್ಯಾನ್',
+    'common.back': 'ಹಿಂದೆ',
+    'common.save': 'ಉಳಿಸಿ',
+    'common.delete': 'ಅಳಿಸಿ',
+    'common.download': 'ವರದಿ ಡೌನ್‌ಲೋಡ್',
+    'common.loading': 'ಲೋಡ್ ಆಗುತ್ತಿದೆ...',
+    'common.retry': 'ಮರುಪ್ರಯತ್ನಿಸಿ',
+    'common.close': 'ಮುಚ್ಚಿ',
+    'common.viewDetails': 'ವಿವರಗಳನ್ನು ನೋಡಿ',
+    'common.generateReport': 'ವರದಿ ರಚಿಸಿ',
+    'common.listen': 'ಸಲಹೆ ಕೇಳಿ',
+    'common.demo': 'ಡೆಮೊ',
+    'common.cancel': 'ರದ್ದುಮಾಡಿ',
+    'common.confirm': 'ದೃಢೀಕರಿಸಿ',
+
+    'detect.title': 'ಎಐ ರೋಗ ಪತ್ತೆ',
+    'detect.subtitle': 'ತ್ವರಿತ ಎಐ ವಿಶ್ಲೇಷಣೆಗಾಗಿ ಅಡಿಕೆ ಎಲೆಯ ಚಿತ್ರ ಕ್ಯಾಪ್ಚರ್ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+    'detect.takePhoto': 'ಫೋಟೋ ತೆಗೆಯಿರಿ',
+    'detect.uploadImage': 'ಚಿತ್ರ ಅಪ್‌ಲೋಡ್',
+    'detect.analyze': 'ಎಲೆ ವಿಶ್ಲೇಷಿಸಿ',
+    'detect.qualityCheck': 'ಚಿತ್ರ ಗುಣಮಟ್ಟ ಪರಿಶೀಲನೆ',
+    'detect.qualityFail': 'ವಿಶ್ವಾಸಾರ್ಹ ವಿಶ್ಲೇಷಣೆಗಾಗಿ ಚಿತ್ರ ಗುಣಮಟ್ಟ ಸಾಕಷ್ಟಿಲ್ಲ. ದಯವಿಟ್ಟು ಉತ್ತಮ ಬೆಳಕಿನಲ್ಲಿ ಎಲೆಯ ಸ್ಪಷ್ಟ ಚಿತ್ರ ತೆಗೆಯಿರಿ.',
+    'detect.analyzing': 'ವಿಶ್ಲೇಷಿಸುತ್ತಿದೆ...',
+    'detect.scanning': 'ಎಐ ನಿಮ್ಮ ಎಲೆಯನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡುತ್ತಿದೆ...',
+
+    'result.title': 'ಎಐ ವಿಶ್ಲೇಷಣೆ ಪೂರ್ಣ',
+    'result.prediction': 'ಮುನ್ಸೂಚನೆ',
+    'result.severity': 'ತೀವ್ರತೆ',
+    'result.model': 'ಮಾದರಿ',
+    'result.healthyProb': 'ಆರೋಗ್ಯಕರ ಸಂಭವನೀಯತೆ',
+    'result.diseaseProb': 'ಹಳದಿ ಎಲೆ ರೋಗ ಸಂಭವನೀಯತೆ',
+    'result.explanation': 'ಎಐ ವಿವರಣೆ',
+    'result.attention': 'ಎಐ ಗಮನ ದೃಶ್ಯೀಕರಣ',
+    'result.attentionDesc': 'ಎತ್ತಿ ತೋರಿಸಿದ ಪ್ರದೇಶಗಳು ಮಾದರಿ ಮುನ್ಸೂಚನೆಯ ಮೇಲೆ ಪ್ರಭಾವ ಬೀರಿದ ಪ್ರದೇಶಗಳನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತವೆ. ಈ ದೃಶ್ಯೀಕರಣ ವ್ಯಾಖ್ಯಾನಕ್ಕೆ ಸಹಾಯಕ ಮತ್ತು ತಜ್ಞರ ರೋಗನಿರ್ಣಯಕ್ಕೆ ಪರ್ಯಾಯವಲ್ಲ.',
+    'result.healthyTitle': 'ಆರೋಗ್ಯಕರ ಅಡಿಕೆ ಎಲೆ',
+    'result.diseaseTitle': 'ಹಳದಿ ಎಲೆ ರೋಗ ಪತ್ತೆಯಾಗಿದೆ',
+    'result.disclaimer': 'ಎಐ ಮುನ್ಸೂಚನೆಗಳು ಪ್ರಾಥಮಿಕವಾಗಿವೆ ಮತ್ತು ದೋಷಗಳನ್ನು ಹೊಂದಿರಬಹುದು. ಫಲಿತಾಂಶವನ್ನು ನಿರ್ಧಾರ-ಬೆಂಬಲ ಸಾಧನವಾಗಿ ಬಳಸಿ ಮತ್ತು ದೃಢೀಕರಣ ಮತ್ತು ಚಿಕಿತ್ಸಾ ಶಿಫಾರಸುಗಳಿಗಾಗಿ ತರ್ಹಿತ ಕೃಷಿ ತಜ್ಞರನ್ನು ಸಂಪರ್ಕಿಸಿ.',
+
+    'advisory.title': 'ರೈತ ಸಲಹೆ',
+    'advisory.meaning': 'ಫಲಿತಾಂಶದ ಅರ್ಥ',
+    'advisory.symptoms': 'ಗಮನಿಸಬೇಕಾದ ಲಕ್ಷಣಗಳು',
+    'advisory.immediate': 'ತಕ್ಷಣ ಕ್ರಮಗಳು',
+    'advisory.fieldMgmt': 'ಕ್ಷೇತ್ರ ನಿರ್ವಹಣಾ ಶಿಫಾರಸುಗಳು',
+    'advisory.prevention': 'ತಡೆಗಟ್ಟುವಿಕೆ',
+    'advisory.monitoring': 'ಮೇಲ್ವಿಚಾರಣಾ ವೇಳಾಪಟ್ಟಿ',
+    'advisory.expert': 'ಕೃಷಿ ತಜ್ಞರನ್ನು ಸಂಪರ್ಕಿಸಬೇಕಾದಾಗ',
+    'advisory.chemical': 'ಕೀಟನಾಶಕಗಳು ಅಥವಾ ಇತರ ಚಿಕಿತ್ಸೆಗಳನ್ನು ಅನ್ವಯಿಸುವ ಮೊದಲು ನಿಮ್ಮ ಸ್ಥಳೀಯ ಕೃಷಿ ಇಲಾಖೆ ಅಥವಾ ಸಸ್ಯ ರೋಗಶಾಸ್ತ್ರಜ್ಞರ ಶಿಫಾರಸುಗಳನ್ನು ಅನುಸರಿಸಿ.',
+
+    'dashboard.greeting': 'ಶುಭೋದಯ, ರೈತರೇ',
+    'dashboard.totalScans': 'ಒಟ್ಟು ಸ್ಕ್ಯಾನ್‌ಗಳು',
+    'dashboard.healthy': 'ಆರೋಗ್ಯಕರ ಎಲೆಗಳು',
+    'dashboard.diseased': 'ರೋಗಿಷ್ಟ ಎಲೆಗಳು',
+    'dashboard.highRisk': 'ಅಪಾಯಕರ ಮುನ್ಸೂಚನೆಗಳು',
+    'dashboard.trend': 'ರೋಗ ಪತ್ತೆ ಪ್ರವೃತ್ತಿ',
+    'dashboard.severityDist': 'ತೀವ್ರತೆ ವಿತರಣೆ',
+    'dashboard.recent': 'ಇತ್ತೀಚಿನ ಮುನ್ಸೂಚನೆಗಳು',
+
+    'weather.title': 'ಹವಾಮಾನ ಮತ್ತು ಕೃಷಿ ಸಲಹೆ',
+    'weather.current': 'ಪ್ರಸ್ತುತ ಹವಾಮಾನ',
+    'weather.temp': 'ತಾಪಮಾನ',
+    'weather.humidity': 'ಆರ್ದ್ರತೆ',
+    'weather.rain': 'ಮಳೆ ಸಂಭವನೀಯತೆ',
+    'weather.forecast': '7-ದಿನಗಳ ಮುನ್ಸೂಚನೆ',
+    'weather.tips': 'ಹವಾಮಾನ ಆಧಾರಿತ ಕೃಷಿ ಸಲಹೆ',
+
+    'profile.title': 'ರೈತ ಪ್ರೊಫೈಲ್',
+    'profile.name': 'ಹೆಸರು',
+    'profile.mobile': 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ',
+    'profile.village': 'ಗ್ರಾಮ',
+    'profile.taluk': 'ತಾಲೂಕು',
+    'profile.district': 'ಜಿಲ್ಲೆ',
+    'profile.farmSize': 'ಕೃಷಿ ಭೂಮಿ (ಎಕರೆ)',
+    'profile.palms': 'ಅಡಿಕೆ ಸಸಿಗಳ ಸಂಖ್ಯೆ',
+    'profile.language': 'ಭಾಷೆ ಆದ್ಯತೆ',
+
+    'expert.title': 'ತಜ್ಞ ಸಹಾಯ ಬೇಕೇ?',
+    'expert.subtitle': 'ವೃತ್ತಿಪರ ಮಾರ್ಗದರ್ಶನಕ್ಕಾಗಿ ಕೃಷಿ ತಜ್ಞರೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಿ',
+    'expert.officer': 'ಕೃಷಿ ಅಧಿಕಾರಿ',
+    'expert.pathologist': 'ಸಸ್ಯ ರೋಗಶಾಸ್ತ್ರಜ್ಞ',
+    'expert.research': 'ಕೃಷಿ ಸಂಶೋಧನಾ ಕೇಂದ್ರ',
+
+    'about.title': 'ಯೋಜನೆಯ ಬಗ್ಗೆ',
+
+    'admin.title': 'ನಿರ್ವಾಹಕ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್',
+    'admin.farmers': 'ಒಟ್ಟು ರೈತರು',
+    'admin.predictions': 'ಒಟ್ಟು ಮುನ್ಸೂಚನೆಗಳು',
+    'admin.healthy': 'ಆರೋಗ್ಯಕರ ಮುನ್ಸೂಚನೆಗಳು',
+    'admin.disease': 'ರೋಗ ಮುನ್ಸೂಚನೆಗಳು',
+    'admin.diseaseDist': 'ರೋಗ ವಿತರಣೆ',
+    'admin.severityDist': 'ತೀವ್ರತೆ ವಿತರಣೆ',
+    'admin.accuracy': 'ಮಾದರಿ ನಿಖರತೆ',
+    'admin.precision': 'ನಿಶ್ಚಿತತೆ',
+    'admin.recall': 'ನೆನಪಿಕೆ',
+    'admin.f1': 'F1 ಅಂಕ',
+    'admin.trend': 'ಮುನ್ಸೂಚನೆ ಪ್ರವೃತ್ತಿ',
+
+    'model.title': 'ಮಾದರಿ ನಿರ್ವಹಣೆ',
+    'model.name': 'ಮಾದರಿ ಹೆಸರು',
+    'model.version': 'ಆವೃತ್ತಿ',
+    'model.trainingDate': 'ತರಬೇತಿ ದಿನಾಂಕ',
+    'model.dataset': 'ಡೇಟಾಸೆಟ್ ಆವೃತ್ತಿ',
+    'model.status': 'ಸ್ಥಿತಿ',
+    'model.metricsUnavailable': 'ನಿಜವಾದ ಮಾದರಿ ತರಬೇತಿ ಮತ್ತು ಸಂಪರ್ಕಿಸಿದ ನಂತರ ಮೆಟ್ರಿಕ್ಸ್ ಲಭ್ಯವಿರುತ್ತವೆ.',
+
+    'auth.login': 'ಲಾಗಿನ್',
+    'auth.register': 'ನೋಂದಣಿ',
+    'auth.email': 'ಇಮೇಲ್',
+    'auth.password': 'ಪಾಸ್‌ವರ್ಡ್',
+    'auth.name': 'ಪೂರ್ಣ ಹೆಸರು',
+    'auth.mobile': 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ',
+    'auth.welcome': 'ಮತ್ತೆ ಸ್ವಾಗತ',
+    'auth.createAccount': 'ನಿಮ್ಮ ಖಾತೆ ರಚಿಸಿ',
+    'auth.noAccount': 'ಖಾತೆ ಇಲ್ಲವೇ?',
+    'auth.haveAccount': 'ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯೇ?',
+
+    'notfound.title': 'ಪುಟ ಕಂಡುಬಂದಿಲ್ಲ',
+    'notfound.subtitle': 'ನೀವು ಹುಡುಕುತ್ತಿರುವ ಪುಟ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ ಅಥವಾ ಸ್ಥಳಾಂತರಿಸಲಾಗಿದೆ.',
+    'notfound.home': 'ಮುಖಪುಟಕ್ಕೆ ಹಿಂದೆ',
+  },
+};
