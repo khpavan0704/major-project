@@ -29,7 +29,7 @@ export function Header() {
     { to: '/dashboard', label: 'nav.dashboard', icon: LayoutDashboard },
     { to: '/history', label: 'nav.history', icon: History },
     { to: '/advisory', label: 'nav.advisory', icon: Stethoscope },
-    { to: '/diseases', label: 'Diseases', icon: BookOpen },
+    { to: '/diseases', label: 'nav.diseases', icon: BookOpen },
     { to: '/weather', label: 'nav.weather', icon: CloudSun },
     { to: '/expert', label: 'nav.expert', icon: Info },
     { to: '/about', label: 'nav.about', icon: Info },

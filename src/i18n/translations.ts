@@ -3,7 +3,7 @@ export type Language = 'en' | 'kn';
 export type TranslationKey =
   | 'nav.home' | 'nav.detect' | 'nav.dashboard' | 'nav.history' | 'nav.advisory'
   | 'nav.weather' | 'nav.profile' | 'nav.expert' | 'nav.about' | 'nav.admin' | 'nav.model'
-  | 'nav.login' | 'nav.register' | 'nav.logout'
+  | 'nav.diseases' | 'nav.login' | 'nav.register' | 'nav.logout'
   | 'landing.hero.title' | 'landing.hero.subtitle' | 'landing.hero.detect' | 'landing.hero.advisory'
   | 'landing.how.title' | 'landing.how.step1' | 'landing.how.step2' | 'landing.how.step3' | 'landing.how.step4'
   | 'landing.why.title'
@@ -49,6 +49,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     'nav.about': 'About',
     'nav.admin': 'Admin',
     'nav.model': 'Model',
+    'nav.diseases': 'Diseases',
     'nav.login': 'Login',
     'nav.register': 'Register',
     'nav.logout': 'Logout',
@@ -207,6 +208,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     'nav.about': 'ಯೋಜನೆಯ ಬಗ್ಗೆ',
     'nav.admin': 'ನಿರ್ವಾಹಕ',
     'nav.model': 'ಮಾದರಿ',
+    'nav.diseases': 'ರೋಗಗಳು',
     'nav.login': 'ಲಾಗಿನ್',
     'nav.register': 'ನೋಂದಣಿ',
     'nav.logout': 'ಲಾಗ್‌ಔಟ್',
